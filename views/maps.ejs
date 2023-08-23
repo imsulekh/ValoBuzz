@@ -1,0 +1,20 @@
+<h1 class="pb-4">Explore Maps</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Explore Maps</li>
+    </ol>
+  </nav>
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3 mb-4">
+    <% if(elements != '') { %>
+        <% elements.forEach(function(element, index) { %>
+            <a href="/map/<%= element.uuid %>" class="col text-center category__link">
+                <div class="category__img shadow" style="height: 125px;">
+                    <img src="<%- element.splash %>" alt="<%- element.displayName %>" loading="lazy">
+                </div>
+                <div class="pt-1"><%- element.displayName %></div>
+            </a>
+        <% }) %>
+    <% } %>
+</div>  

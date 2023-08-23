@@ -1,0 +1,36 @@
+<% if(mapData != null) { %>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/exploreMaps">Explore Maps</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%- mapData.displayName %></li>
+        </ol>
+      </nav>
+
+      <div class="row">
+        <div class="col-12 col-md-4">
+            <img src="<%- mapData.splash %>" class="img-fluid sticky-top" style="top: 235px; height: 400px;" alt="<%- mapData.displayName %>" loading="lazy">
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12">
+                    <h1><%- mapData.displayName %></h1>
+                </div>
+                <div class="col-12 mb-4" style="color: dimgray;"><%- mapData.coordinates %></div>
+            </div>
+            <div class="row">
+                <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+                    <a href="#" class="col text-center category__link">
+                        <div class="category__img shadow" style="height: 700px; width: 700px;">
+                            <img src="<%- mapData.displayIcon %>" alt="<%- mapData.displayName %>" loading="lazy">
+                        </div>
+                
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+
+<% } else { %>
+    <p>No Items Found</p>
+<% } %>

@@ -1,0 +1,30 @@
+<% if(blog != null) { %>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Explore Agents</li>
+        </ol>
+      </nav>
+
+      <div class="row">
+        <div class="col-12 col-md-4">
+            <img src="/uploads/<%- blog.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- blog.blogTitle %>" loading="lazy">
+        </div>
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12">
+                    <h1><%- blog.blogTitle %></h1>
+                </div>
+                <div class="col-12 mb-4"><i class="bi bi-tag"></i><%- blog.category %></div>
+                <div class="col-12" style="white-space: pre-line; font-size: 1.3em;">
+                    <h4>Description</h4>
+                    <%- blog.description %>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+
+<% } else { %>
+    <p>No Items Found</p>
+<% } %>

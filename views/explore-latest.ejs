@@ -1,0 +1,17 @@
+<h1 class="pb-4">Explore Latest</h1>
+
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+    <% if(blogs != '') { %>
+        <% blogs.forEach(function(blog, index) { %>
+            <a href="/blog/<%= blog._id %>" class="col text-center category__link">
+                <div class="category__img shadow" style="height: 480px;">
+                    <img src="/uploads/<%- blog.image %>" alt="<%- blog.blogTitle %>" height="480px" loading="lazy">
+                </div>
+                <div class="pt-1"><%- blog.blogTitle %></div>
+            </a>
+        <% }) %>
+    <% } %>
+    
+
+</div>

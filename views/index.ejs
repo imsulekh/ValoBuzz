@@ -1,0 +1,107 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/valo.jpeg" width="607" height="510" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Cooking With Node.js">
+    </div>
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">
+            Huge selection of popular games
+        </h1>
+        <p class="lead">Explore our sample aifbaifb fsififb sie fsei ios gsoi noi fsoi fbsiog bibg oi gbeisobngoib gioebg iebg sioebg oieb giobgosibgsib gsoibg iosb goieb goieb gioeb goieb gie gbesigbsio gbsoig beoi  e gbiseobgibg gsigsbgsj </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+            <a href="#" id="turnOnHeatBtn" class="btn btn-secondary btn-lg px-4 me-md-2">Turn On Heat</a>
+        </div>
+    </div>
+</div>
+
+<!--Agents start-->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-item-center">
+        <h2>Agents</h2>
+        <a href="/exploreAgents" class="ms-auto">View More</a>
+    </div>
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    <% if(agents != '') { %>
+        <% agents.forEach(function(agent, index) { %>
+            <a href="/agent/<%= agent.uuid %>" class="col text-center category__link">
+                <div class="category__img shadow">
+                    <img src="<%- agent.fullPortrait %>" alt="<%- agent.displayName %>" style="transform: scale(1.4);" loading="lazy">
+                </div>
+                <div class="pt-1"><%- agent.displayName %></div>
+            </a>
+        <% }) %>
+    <% } %>
+    
+
+</div>
+</section>
+<!--Agents end-->
+
+
+<!--Maps start-->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-item-center">
+        <h2>Maps</h2>
+        <a href="/exploreMaps" class="ms-auto">View More</a>
+    </div>
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    <% if(maps != '') { %>
+        <% maps.forEach(function(map, index) { %>
+            <a href="/map/<%= map.uuid %>" class="col text-center category__link">
+                <div class="category__img shadow" style="height: 125px;">
+                    <img src="<%- map.splash %>" alt="<%- map.displayName %>" loading="lazy">
+                </div>
+                <div class="pt-1"><%- map.displayName %></div>
+            </a>
+        <% }) %>
+    <% } %>
+    
+
+</div>
+</section>
+<!--Maps end-->
+
+
+
+<!--Latest Start-->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-item-center">
+        <h2>Latest Articles</h2>
+        <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        <% if(data.blogs != '') { %>
+            <% data.blogs.forEach(function(blog, index) { %>
+                <a href="/blog/<%= blog._id %>" class="col text-center category__link">
+                    <div class="category__img shadow" style="height: 480px;"">
+                        <img src="/uploads/<%- blog.image %>" alt="<%- blog.blogTitle %>" loading="lazy">
+                    </div>
+                    <div class="pt-1"><%- blog.blogTitle %></div>
+                </a>
+            <% }) %>
+        <% } %>
+    </div>
+</section>
+
+<!--Latest End-->
+
+
+<!--Submit Start-->
+<section class="px-4 py-5 my-5 text-center">
+    <img src="/img/valorant1.jpeg" class="d-block mx-auto mb-4 img-fluid" alt="Publish your Blog FREE Today" width="766" height="408" loading="lazy">
+    <h1 class="display-5 fw-bold">Publish your Blog FREE Today</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+            Publish your Blog FREE Today wnfgeing iweng iwnbgiewn giwek g .
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit-blog" class="btn btn-primary btn-dark btn-lg">Submit Blog</a>
+        </div>
+    </div>
+
+</section>
+
+<!--Submit End-->

@@ -1,0 +1,71 @@
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Submit your Blog</h1>
+    <div class="lead">Drop your blogs here to influence the valorant community.</div>
+</div>
+
+
+
+<div class="row justify-content-center">
+
+    <% if(infoSubmitObj != '') { %>
+        <div class="col-8 alert alert-success" role="alert">
+            <%= infoSubmitObj %>
+          </div>
+          <% } %>
+    
+    <% if(infoErrorObj != '') { %>
+    <div class="col-8 alert alert-danger" role="alert">
+        <%= infoErrorObj[0].message %>
+        </div>
+        <% } %>
+
+
+    <div class="col-8">
+
+        <form action="/submit-blog" enctype="multipart/form-data" method="POST">
+
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="blogTitle" class="form-label">Blog Title</label>
+                    <input type="text" name="blogTitle" id="blogTitle" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" id="description" class="form-control" cols="30" rows="4" required></textarea>
+                </div>
+                <!-- 'Patch Notes', 'Tips and Tricks', 'Tutorial', 'Bugs', 'Gameplay', 'Review' -->
+                <div class="col-12">
+                    <label for="category">Select Tags</label>
+                    <select class="form-select form-control" name="category" aria-label="Category" required>
+                        <option selected>Select Category</option>
+                        <option value="Patch Notes">Patch Notes</option>
+                        <option value="Tips and Tricks">Tips and Tricks</option>
+                        <option value="Tutorial">Tutorial</option>
+                        <option value="Bugs">Bugs</option>
+                        <option value="Gameplay">Gameplay</option>
+                        <option value="Review">Review</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label for="image">Image</label>
+                    <input type="file" class="form-control" name="image" accept="image/*" required>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit Blog</button>
+                </div>
+
+            </div>
+
+
+        </form>
+
+    </div>
+</div>
