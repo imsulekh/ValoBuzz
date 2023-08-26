@@ -30,4 +30,6 @@ app.set('view engine', 'ejs');
 const route = require('./server/routes/gameRoutes.js');
 app.use('/', route);
 
+
+
 app.listen(port, ()=> console.log( `Listening to port ${port}`));
