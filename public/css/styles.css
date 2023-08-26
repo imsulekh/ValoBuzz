@@ -33,6 +33,7 @@ a {
 }
 .category__img:hover {
    background-color: black;
+   
 }
 .category__img--large {
     height: 330px;
